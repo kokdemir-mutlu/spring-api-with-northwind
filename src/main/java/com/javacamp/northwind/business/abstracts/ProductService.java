@@ -3,6 +3,7 @@ package com.javacamp.northwind.business.abstracts;
 import com.javacamp.northwind.core.utilities.results.DataResult;
 import com.javacamp.northwind.core.utilities.results.Result;
 import com.javacamp.northwind.entities.concretes.Product;
+import com.javacamp.northwind.entities.dtos.ProductWithCategoryDto;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -29,4 +30,6 @@ public interface ProductService {
     DataResult<List<Product>> getByProductNameStartsWith(String productName);
 
     DataResult<List<Product>> getByNameAndCategoryId(String productName, int categoryId);
+
+    DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails();
 }
