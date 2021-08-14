@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/products")
 public class ProductsController {
@@ -23,9 +24,7 @@ public class ProductsController {
     }
 
     @GetMapping("/getall")
-    public DataResult<List<Product>> getAll(){
-        return this.productService.getAll();
-    }
+    public DataResult<List<Product>> getAll(){ return this.productService.getAll(); }
 
     @PostMapping("/add")
     public Result add(@RequestBody Product product){
